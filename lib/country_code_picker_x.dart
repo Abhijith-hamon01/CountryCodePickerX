@@ -80,6 +80,7 @@ class CountryCodePickerX extends StatefulWidget {
   final Decoration? flagDecoration;
 
   final double? iconSize;
+  final Color iconColor;
 
   /// An optional argument for injecting a list of countries
   /// with customized codes.
@@ -120,6 +121,7 @@ class CountryCodePickerX extends StatefulWidget {
     this.closeIcon = const Icon(Icons.close),
     this.countryList = codes,
     this.iconSize=32.0,
+    this.iconColor =Colors.grey,
     Key? key,
   }) : super(key: key);
 
@@ -208,7 +210,7 @@ class CountryCodePickerState extends State<CountryCodePickerX> {
                 ),
               if (widget.showDropDownButton)
                 Flexible(
-                  flex: widget.alignLeft ? 0 : 1,
+                  flex: widget.alignLeft ? 0 :1,
                   fit: widget.alignLeft ? FlexFit.tight : FlexFit.loose,
                   child: Padding(
                       padding: widget.alignLeft
@@ -216,7 +218,7 @@ class CountryCodePickerState extends State<CountryCodePickerX> {
                           : const EdgeInsets.only(right:0),
                       child: Icon(
                         Icons.keyboard_arrow_down_sharp,
-                        color: Colors.grey,
+                        color: widget.iconColor,
                         size: widget.iconSize,
                       )),
                 ),
