@@ -122,6 +122,19 @@ class _MyAppState extends State<MyApp> {
                   borderRadius: BorderRadius.circular(7),
                 ),
               ),
+              Container(
+                color: Colors.red,
+                child: CountryCodePickerX(
+                  padding: EdgeInsets.zero,
+                //  onChanged: _changeCountryCode,
+                  initialSelection: 'US',
+                  favorite: const ['+1', 'US'],
+                  showFlagDialog: true,
+                  showDropDownButton: true,
+                  //onInit: init,
+                  flagWidth: 25,
+                ),
+              ),
               SizedBox(
                 width: 400,
                 height: 60,

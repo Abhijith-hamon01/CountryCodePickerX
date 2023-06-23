@@ -79,6 +79,8 @@ class CountryCodePickerX extends StatefulWidget {
   /// [BoxDecoration] for the flag image
   final Decoration? flagDecoration;
 
+  final double? iconSize;
+
   /// An optional argument for injecting a list of countries
   /// with customized codes.
   final List<Map<String, String>> countryList;
@@ -117,6 +119,7 @@ class CountryCodePickerX extends StatefulWidget {
     this.dialogBackgroundColor,
     this.closeIcon = const Icon(Icons.close),
     this.countryList = codes,
+    this.iconSize=32.0,
     Key? key,
   }) : super(key: key);
 
@@ -183,7 +186,7 @@ class CountryCodePickerState extends State<CountryCodePickerX> {
                     decoration: widget.flagDecoration,
                     margin: widget.alignLeft
                         ? const EdgeInsets.only(right: 16.0, left: 8.0)
-                        : const EdgeInsets.only(right: 16.0),
+                        : const EdgeInsets.only(right:8),
                     child: Image.asset(
                       selectedItem!.flagUri!,
                       package: 'country_code_picker_x',
@@ -210,11 +213,11 @@ class CountryCodePickerState extends State<CountryCodePickerX> {
                   child: Padding(
                       padding: widget.alignLeft
                           ? const EdgeInsets.only(right: 16.0, left: 8.0)
-                          : const EdgeInsets.only(right: 16.0),
+                          : const EdgeInsets.only(right:0),
                       child: Icon(
-                        Icons.arrow_drop_down,
+                        Icons.keyboard_arrow_down_sharp,
                         color: Colors.grey,
-                        size: widget.flagWidth,
+                        size: widget.iconSize,
                       )),
                 ),
             ],
